@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de grupos
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Lista de grupos</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Grado</th>
+            <th>Letra</th>
+            <th>id_plantel</th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for grupo in object_list %}
+                <tr>
+                    <td>{{grupo.id_grupo}}</td>
+                    <td>{{grupo.grado}}</td>
+                    <td>{{grupo.letra}}</td>
+                    <td>{{grupo.id_palntel}}</td>
+                    
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+ </table>
+    
+{% endblock contenido %}
+{% block scripts %}
+{% endblock scripts %}
+

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de encargados
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Lista de encargados</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Grado</th>
+            <th>Letra</th>
+            <th>id_plantel</th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for plantel in object_list %}
+                <tr>
+                    <td>{{plantel.id_plantel}}</td>
+                    <td>{{plantel.nombre_plantel}}</td>
+                    <td>{{plantel.domicilio}}</td>
+                    <td>{{plantel.numero_telefono}}</td>
+                    
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+ </table>
+    
+{% endblock contenido %}
+{% block scripts %}
+{% endblock scripts %}

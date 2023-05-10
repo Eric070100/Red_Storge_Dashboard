@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de estudiante
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Lista de estudiante</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Ap. Paterno</th>
+            <th>Ap. Materno</th>
+            <th>fecha_nacimiento</th>
+            <th>grupo</th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for estudiante in object_list %}
+                <tr>
+                    <td>{{estudiante.nombre}}</td>
+                    <td>{{estudiante.apellido_paterno}}</td>
+                    <td>{{estudiante.apellido_materno}}</td>
+                    <td>{{estudiante.fecha_nacimiento}}</td>
+                    <td>{{estudiante.grupo}}</td>
+                    
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+ </table>
+    
+{% endblock contenido %}
+{% block scripts %}
+{% endblock scripts %}

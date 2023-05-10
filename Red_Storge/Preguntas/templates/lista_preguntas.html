@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de preguntas
+{% endblock titulo %}
+    
+
+{% block contenido %}
+    <h1>Lista de preguntas</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id_pregunta</th>
+                <th>planteamiento</th>
+                <th>id_modulo</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pregunta in preguntas %}
+                <tr>
+                    <td>{{pregunta.id_pregunta}}</td>
+                    <td>{{pregunta.planteamiento}}</td>
+                    <td>{{pregunta.modulo}}</td>
+                    <td><a class="btn btn-danger" href="">Eliminar</a></td>
+                    <td><a class="btn btn-success" href="">Editar</a></td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

@@ -1,0 +1,14 @@
+.btn{
+    font-size: 20px;
+    color: aliceblue;
+    padding: 5px;
+    margin: 7px;
+}
+
+.btn-rojo{
+    background-color: brown !important; 
+}
+
+.btn-azul{
+    background-color: blue;
+}
