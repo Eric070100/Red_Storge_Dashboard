@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views.generic import ListView, TemplateView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Plantel, Grupo
-from .forms import FormPlantel, FormGrupo
+from .forms import FormPlantel, FormGrupo,  FormGrupoEditar, FormPlantelEditar
 from django.urls import reverse_lazy
 # Create your views here.
 class ListaPlanteles(ListView):
@@ -24,3 +24,23 @@ class NuevoGrupo(CreateView):
     # fields = '__all__'
     success_url = reverse_lazy('lista_grupos')
     extra_context = {'accion': 'Nueva'}
+
+class EditarGrupo(UpdateView):
+    model = Grupo
+    form_class = FormGrupoEditar
+    extra_context = {'accion': 'Editar'}
+    success_url = reverse_lazy('lista_grupos')
+    
+class EliminarGrupo(DeleteView):
+    model = Grupo
+    success_url = reverse_lazy('lista_grupos')
+
+class EditarPlantel(UpdateView):
+    model = Plantel
+    form_class = FormPlantelEditar
+    extra_context = {'accion': 'Editar'}
+    success_url = reverse_lazy('lista_planteles')
+    
+class EliminarPlantel(DeleteView):
+    model = Plantel
+    success_url = reverse_lazy('lista_plantales')

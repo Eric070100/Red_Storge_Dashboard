@@ -22,3 +22,13 @@ class FormGrupo(forms.ModelForm):
             'letra' : forms.TextInput( attrs={'class':'form-control','placeholder':'Letra'}),
             'id_plantel' : forms.Select(attrs={'class':'form-control','placeholder':'Plantel'})
         }
+
+class FormGrupoEditar(FormGrupo):
+    class Meta:
+        exclude = ['id_grupo']
+        model = Grupo
+
+class FormPlantelEditar(FormPlantel):
+    class Meta:
+        exclude = ['id_plantel']
+        model = Plantel
