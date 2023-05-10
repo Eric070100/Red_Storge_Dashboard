@@ -21,8 +21,14 @@
                     <td>{{pregunta.id_pregunta}}</td>
                     <td>{{pregunta.planteamiento}}</td>
                     <td>{{pregunta.modulo}}</td>
-                    <td><a class="btn btn-danger" href="">Eliminar</a></td>
-                    <td><a class="btn btn-success" href="">Editar</a></td>
+                    <td><a class="btn btn-sm btn-primary" 
+                            href="{% url 'editar_pregunta' pregunta.id_pregunta %}">
+                            Editar
+                        </a></td>
+                    <td><a class="btn btn-sm btn-danger" 
+                            href="{% url 'eliminar_pregunta' pregunta.id_pregunta %}">
+                            Eliminar
+                    </a></td>
 
                 </tr>
             {% endfor %}

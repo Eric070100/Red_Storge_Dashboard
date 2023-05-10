@@ -9,21 +9,19 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Nombre</th>
-            <th>Ap. Paterno</th>
-            <th>Ap. Materno</th>
-            <th>fecha_nacimiento</th>
-            <th>plantel</th>
+            <th>Id</th>
+            <th>Nombre plantel</th>
+            <th>Domicilio</th>
+            <th>Telefono</th>
         </tr>
     </thead>
         <tbody>
-            {% for encargado in object_list %}
+            {% for plantel in object_list %}
                 <tr>
-                    <td>{{encargado.nombre}}</td>
-                    <td>{{encargado.apellido_paterno}}</td>
-                    <td>{{encargado.apellido_materno}}</td>
-                    <td>{{encargado.fecha_nacimiento}}</td>
-                    <td>{{encargado.plantel}}</td>
+                    <td>{{plantel.id_plantel}}</td>
+                    <td>{{plantel.nombre_plantel}}</td>
+                    <td>{{plantel.domicilio}}</td>
+                    <td>{{plantel.numero_telefono}}</td>
                     
                    
                 </tr>

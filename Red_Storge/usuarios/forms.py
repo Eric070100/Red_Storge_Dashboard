@@ -7,6 +7,11 @@ class FormEstudiante(forms.ModelForm):
     class Meta:
         model = Estudiante
         exclude = ['usuario']
+        widgets = {
+            'fecha_nacimiento': forms.DateInput(
+                attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd (DOB)', 'class': 'form-control'}
+            )
+        }
        
         
 class FormEP(forms.ModelForm):
@@ -14,6 +19,11 @@ class FormEP(forms.ModelForm):
     class Meta:
         model = Encargo_plantel
         exclude = ['usuario']
+        widgets = {
+            'fecha_nacimiento': forms.DateInput(
+                attrs={'type': 'date', 'placeholder': 'yyyy-mm-dd (DOB)', 'class': 'form-control'}
+            )
+        }
 
 class UserForm(forms.ModelForm):
     re_pass = forms.CharField(

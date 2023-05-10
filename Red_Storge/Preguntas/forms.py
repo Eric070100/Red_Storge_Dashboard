@@ -10,3 +10,8 @@ class FormPregunta(forms.ModelForm):
             'planteamiento' : forms.TextInput( attrs={'class':'form-control','placeholder':'Planteamiento'}),
             'modulo' : forms.Select( attrs={'class':'form-control','placeholder':'Modulo'}),
         }
+
+class FormPreguntaEditar(FormPregunta):
+    class Meta:
+        exclude = ['id_pregunta']
+        model = Pregunta
