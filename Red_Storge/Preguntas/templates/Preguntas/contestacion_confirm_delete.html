@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Eliminar contestacion
+{% endblock titulo %}
+
+{% block contenido %}
+    <form method="post">
+        {% csrf_token %}
+        <p>¿Estás seguro de querer eliminar la contestacion {{object.id_opcion}}?</p>
+        {{form}}
+        <button  class="btn btn-danger" type="submit">Eliminar</button>
+        <a class="btn btn-warning" href="{% url 'lista_opcions' %}">Cancelar</a>
+    </form>
+{% endblock contenido %}

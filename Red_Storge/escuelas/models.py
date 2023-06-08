@@ -6,6 +6,8 @@ class Plantel(models.Model):
     nombre_plantel = models.CharField(max_length=300)
     domicilio = models.CharField(max_length=200)
     numero_telefono = models.CharField(max_length=200)
+    def __str__(self):
+        return f"{self.nombre_plantel}"
 
 class Grupo(models.Model):
     id_grupo = models.IntegerField(primary_key=True)
@@ -13,3 +15,5 @@ class Grupo(models.Model):
     letra = models.CharField(max_length=1)
     id_palntel = models.ForeignKey("escuelas.Plantel", \
         verbose_name="plantel", on_delete=models.CASCADE)
+    def __str__(self):
+        return f"{self.grado}-{self.letra}"

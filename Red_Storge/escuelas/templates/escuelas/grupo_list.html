@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    Lista de grupos
+    Lista de grupos escolares
 {% endblock titulo %}
 
 {% block contenido %}
@@ -26,12 +26,10 @@
                         href="{% url 'editar_grupo' grupo.id_grupo %}">
                         Editar
                     </a></td>
-                <td><a class="btn btn-sm btn-danger" 
+                     <td><a class="btn btn-sm btn-danger" 
                         href="{% url 'eliminar_grupo' grupo.id_grupo %}">
                         Eliminar
-                </a></td>
-                    
-                   
+                   </a></td> 
                 </tr>
             {% endfor %}
         </tbody>

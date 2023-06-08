@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block titulo %}
-    {{accion}} Grupo
+    {{accion}} Grupo escolar
 {% endblock titulo %}
     
 {% block contenido %}
-    <h1>{{accion}} grupo</h1>
+    <h1>{{accion}} grupo escolar</h1>
     <form method="post">
         {% csrf_token %}
         {{form.as_p}}

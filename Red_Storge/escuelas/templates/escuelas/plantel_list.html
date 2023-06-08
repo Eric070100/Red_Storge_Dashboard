@@ -22,6 +22,14 @@
                     <td>{{plantel.nombre_plantel}}</td>
                     <td>{{plantel.domicilio}}</td>
                     <td>{{plantel.numero_telefono}}</td>
+                    <td><a class="btn btn-sm btn-primary" 
+                        href="{% url 'editar_plantel' plantel.id_plantel %}">
+                        Editar
+                    </a></td>
+                     <td><a class="btn btn-sm btn-danger" 
+                        href="{% url 'eliminar_plantel' plantel.id_plantel %}">
+                        Eliminar
+                   </a></td>
                     
                    
                 </tr>

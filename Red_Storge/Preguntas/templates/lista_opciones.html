@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de Opciones
+{% endblock titulo %}
+
+{% block contenido %}
+<h1>Lista de Opciones</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>id_pregunta</th>
+            <th>Inciso</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead>
+        <tbody>
+            {% for opcion in opciones %}
+                <tr>
+                    <td>{{opcion.id_opcion}}</td>
+                    <td>{{opcion.id_pregunta}}</td>
+                    <td>{{opcion.inciso}}</td>
+                    <td>{{opcion.descripcion}}</td>
+                    <td><a class="btn btn-sm btn-primary" 
+                        href="{% url 'editar_opcion' opcion.id_opcion %}">
+                        Editar
+                    </a></td>
+                     <td><a class="btn btn-sm btn-danger" 
+                        href="{% url 'eliminar_opcion' opcion.id_opcion %}">
+                        Eliminar
+                   </a></td>
+                    
+                   
+                </tr>
+            {% endfor %}
+        </tbody>
+ </table>
+    
+{% endblock contenido %}
+{% block scripts %}
+{% endblock scripts %}

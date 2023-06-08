@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    Lista de contestaciones
+{% endblock titulo %}
+    
+
+{% block contenido %}
+    <h1>Lista de contestaciones</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>id_contestacion</th>
+                <th>id_estudiante</th>
+                <th>id_opciono</th>
+                <th>tiempo_segundos</th>
+                <th>numero_intento</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for pregunta in contestaciones %}
+                <tr>
+                    <td>{{contestacion.id_contestacion}}</td>
+                    <td>{{contestacion.id_estudiante}}</td>
+                    <td>{{contestacion.id_opcion}}</td>
+                    <td>{{contestacion.tiempo_segundos}}</td>
+                    <td>{{contestacion.numero_intento}}</td>
+                    
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock contenido %}

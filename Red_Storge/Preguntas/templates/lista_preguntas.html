@@ -13,6 +13,7 @@
                 <th>id_pregunta</th>
                 <th>planteamiento</th>
                 <th>id_modulo</th>
+                <th>id_fase</th>
             </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
                     <td>{{pregunta.id_pregunta}}</td>
                     <td>{{pregunta.planteamiento}}</td>
                     <td>{{pregunta.modulo}}</td>
+                    <td>{{pregunta.fase}}</td>
                     <td><a class="btn btn-sm btn-primary" 
                             href="{% url 'editar_pregunta' pregunta.id_pregunta %}">
                             Editar

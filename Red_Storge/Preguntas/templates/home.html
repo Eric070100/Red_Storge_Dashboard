@@ -6,5 +6,38 @@
     
 
 {% block contenido %}
-    
+    {{datos}}
+    <div id="grafica" style="min-width: 310px;height: 400px margin: 0 auto">
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script>
+            Highcharts.chart('grafica', {
+                chart:{
+                    type: 'colum',
+                },
+                title: {
+                    text: 'Gráfica grupos'
+                },
+                subtitle: {
+                    text:'Cuantos alumnos por grupo'
+                },
+                xAxis:{
+                    categorias: ['Grupos']
+                },
+                yAxis:{
+                    min: 0,
+                    title:{
+                        text: 'Cantidad de alumnos'
+                    }
+                },
+                plotOptions:{
+                    column:{
+                        pointPaddin: 0.2,
+                        borderWidth: 0,
+                    }
+                },
+                series: {{datos | safe}}
+            });
+        </script>
+
+    </div>
 {% endblock contenido %}
